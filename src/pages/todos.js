@@ -18,7 +18,7 @@ export default function Todos() {
   //create a state for the text in the todo input form
   const [userInput, setUserInput] = useState('')
   //create a state for the due date chosen in the datepicker
-  const [dueDate, setDueDate] = useState('')
+  const [linkUrl, setlinkUrl] = useState('')
   //set an error message if either input is missing
   const [errMessage, setErrMessage] = useState('')
 
@@ -28,8 +28,8 @@ export default function Todos() {
     if (!loading) {
       //pass userEmail as a query parameter
       fetchedTodos = await client.fetch(
-        `*[_type=="todo" && userEmail==$userEmail] | order(dueDate asc)
-				{_id, text, createdAt, dueDate, isCompleted, completedAt, userEmail}`,
+        `*[_type=="todo" && userEmail==$userEmail] | order(linkUrl asc)
+				{_id, text, linkUrl, userEmail}`,
         {
           userEmail: user.email
         }
@@ -53,13 +53,17 @@ export default function Todos() {
     e.preventDefault()
     setUserInput(e.target.value)
   }
+  const handleUrlChange = e => {
+    e.preventDefault()
+    setlinkUrl(e.target.value)
+  }
 
   //FOR THE SUBMIT BUTTON:
   const handleSubmit = async e => {
     e.preventDefault()
     //if either part of the form isn't filled out
     //set an error message and exit
-    if (userInput.length == 0 || dueDate == '') {
+    if (userInput.length == 0 || linkUrl.length == 0) {
       setErrMessage('Todo text and due date must be filled out.')
     } else {
       //otherwise send the todo to our api
@@ -68,7 +72,7 @@ export default function Todos() {
         method: 'POST',
         body: JSON.stringify({
           text: userInput,
-          dueDate: dueDate,
+          linkUrl: linkUrl,
           user: user.email
         })
       })
@@ -76,7 +80,7 @@ export default function Todos() {
       // Clear all inputs after the todo is sent to Sanity
       setUserInput('')
       setErrMessage('')
-      setDueDate('')
+      setlinkUrl('')
     }
   }
   const handleDelete = async selectedTodo => {
@@ -90,17 +94,15 @@ export default function Todos() {
 
   return (
     <TodoContext.Provider value={{ handleDelete, fetchTodos }}>
-      <div className="max-w-4xl mx-auto ">
+      <div className="w-full mx-auto ">
         <Logout />
         <main className="text-center">
           <div className="my-8">
-            <h1 className="text-4xl font-bold tracking-tight ">My To-do List</h1>
+            <h1 className="text-4xl font-bold tracking-tight ">My Links</h1>
             <p className="mt-4 text-gray-700 text-md">{loading ? 'Loading...' : `Logged in as ${user.email}`}</p>
           </div>
           <form>
-            {/*we flex the text input and datepicker
-					so they display inline. */}
-            <div className="flex justify-center items-center">
+            <div className="flex flex-col justify-center items-center">
               <label for="todo" className="invisible">
                 Your Todo
               </label>
@@ -109,18 +111,19 @@ export default function Todos() {
                 type="text"
                 //our state
                 value={userInput}
-                placeholder="Make coffee."
+                placeholder="Link Title"
                 //our function
                 onChange={handleChange}
               />
-              <div className="my-8">
-                <DatePicker
-                  className="p-4"
-                  //makes it so we cannot set due date in past
-                  minDate={new Date()}
-                  //our dueDate state
-                  onChange={setDueDate}
-                  value={dueDate}
+              <div className="mb-8 mt-2">
+                <input
+                  className="w-72 h-12 border p-4 border-blue-100"
+                  type="text"
+                  //our state
+                  value={linkUrl}
+                  placeholder="Url"
+                  //our function
+                  onChange={handleUrlChange}
                 />
               </div>
             </div>{' '}
@@ -131,20 +134,20 @@ export default function Todos() {
               //our function
               onClick={handleSubmit}
             >
-              Submit
+              Add Link
             </button>
             {/*error set in handleSubmit*/}
             <p>{errMessage}</p>
           </form>
 
-          <div className="my-12">
+          <div className="my-12 w-full">
             <h1
               className="text-xl font-bold tracking-tight 
 					my-8"
             >
-              Your Todos
+              Your Links
             </h1>
-            {loading ? 'loading...' : <TodoList user={user} todoList={todoList} />}
+            {/* {loading ? 'loading...' : <TodoList user={user} todoList={todoList} />} */}
           </div>
         </main>
       </div>

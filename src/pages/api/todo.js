@@ -16,7 +16,7 @@ export default async function handler(req, res) {
             text: newTodo.text,
             isCompleted: false,
             createdAt: new Date().toISOString(),
-            dueDate: newTodo.dueDate,
+            linkUrl: newTodo.linkUrl,
             userEmail: newTodo.user
           })
           .then(res => {

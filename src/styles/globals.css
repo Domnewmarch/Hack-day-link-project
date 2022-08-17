@@ -2,6 +2,34 @@ body {
   background-color: #eaeaea;
 }
 
+.envy-blue {
+  color: #8b5cdd;
+}
+.envy-blue-bg {
+  background-color: #8b5cdd;
+}
+
+.button-icons {
+  margin-right: -4px;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.input-icon:after {
+  background-color: red;
+  width: 20px;
+  hegith: 20px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
