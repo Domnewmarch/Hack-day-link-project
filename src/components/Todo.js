@@ -10,19 +10,21 @@ export default function Todo({ todo }) {
   const router = useRouter()
   const { id } = router.query
   return (
-    <li className="bg-black hover:bg-dark duration-default p-4 rounded-xl w-10/12 md:w-4/12 flex text-white" key={todo._id}>
-      <p className="text-center text-white w-fit mx-auto dark:text-black">{todo.text}</p>
-      {router?.pathname !== '/links' && (
-        <button
-          className="mx-2 tex-white"
-          onClick={e => {
-            e.preventDefault()
-            handleDelete(todo)
-          }}
-        >
-          <RiDeleteBin5Line />
-        </button>
-      )}
-    </li>
+    <a className="bg-black hover:bg-dark duration-default p-4 rounded-xl w-10/12 md:w-4/12 flex text-white text-center justify-center" href={todo.linkUrl} target="_blank" rel="noopener noreferrer">
+      <li className="" key={todo._id}>
+        {todo.text}
+        {router?.pathname !== '/links' && (
+          <button
+            className="mx-2 tex-white"
+            onClick={e => {
+              e.preventDefault()
+              handleDelete(todo)
+            }}
+          >
+            <RiDeleteBin5Line />
+          </button>
+        )}
+      </li>
+    </a>
   )
 }
