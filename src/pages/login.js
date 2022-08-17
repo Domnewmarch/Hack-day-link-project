@@ -29,7 +29,7 @@ export default function Login() {
 
   return (
     <main className="flex flex-col justify-center items-center">
-      <h1 className="text-2xl font-bold tracking-tight mt-8">Log in to your links!</h1>
+      <h1 className=" text-4xl envy-blue font-bold tracking-tight mt-8">Welcome to Parallax Links</h1>
       <form className="mt-12 max-w-2xl mx-auto" onSubmit={handleSubmit}>
         <label className="block mb-2 uppercase text-gray-700 font-semibold" htmlFor="email">
           Email
