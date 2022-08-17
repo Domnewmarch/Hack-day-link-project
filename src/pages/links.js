@@ -48,9 +48,7 @@ export default function Links() {
           <div className="mx-auto flex max-w-screen-sm flex-col items-center px-4">
             <Avatar />
             <Bio />
-            <div className="my-12">
-              <TodoList user={user} todoList={todoList} />
-            </div>
+            <div className="my-12">{loading ? 'loading...' : <TodoList user={user} todoList={todoList} />}</div>
             <Footer />
           </div>
         </div>

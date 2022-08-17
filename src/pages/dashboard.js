@@ -9,7 +9,7 @@ import Logout from '../components/Logout'
 import client from '../lib/sanity/client'
 import TodoList from '../components/TodoList'
 
-export const TodoContext = createContext()
+import { TodoContext } from '../pages/links'
 
 export default function Todos() {
   const { user, loading } = useAuth()
@@ -147,7 +147,7 @@ export default function Todos() {
             >
               <a href="https://hack-day-link-project.vercel.app/links">View Your Links Here!</a>
             </h1>
-            {/* {loading ? 'loading...' : <TodoList user={user} todoList={todoList} />} */}
+            {loading ? 'loading...' : <TodoList user={user} todoList={todoList} />}
           </div>
         </main>
       </div>
