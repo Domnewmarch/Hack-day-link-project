@@ -13,7 +13,6 @@ export default function Todo({ todo }) {
 
   return (
     <li className="bg-black hover:bg-dark duration-default p-4 rounded-xl w-10/12 md:w-4/12 flex text-white" key={todo._id}>
-      {/*if todo is done, cross it out and turn it gray*/}
       <p className="text-center text-white w-fit mx-auto dark:text-black">{todo.text}</p>
       <button
         className="mx-2 tex-white"
