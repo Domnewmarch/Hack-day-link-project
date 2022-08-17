@@ -6,10 +6,13 @@ import Footer from '../components/footer'
 import TodoList from '../components/TodoList'
 import useAuth from '../hooks/useAuth'
 import client from '../lib/sanity/client'
+import { useRouter } from 'next/router'
 
 export const TodoContext = createContext()
 
 export default function Links() {
+  const router = useRouter()
+  console.log(router)
   const { user, loading } = useAuth()
   //create a state to store new  for todos
   const [todoList, setTodoList] = useState([])
@@ -30,7 +33,6 @@ export default function Links() {
       setTodoList(fetchedTodos)
     }
   }
-  console.log(setTodoList)
 
   useEffect(
     () => {

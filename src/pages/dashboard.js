@@ -129,7 +129,7 @@ export default function Todos() {
             </div>{' '}
             <button
               className="focus:outline-none focus:ring focus:border-blue-800
-						px-6 py-2 rounded-xl bg-blue-500 text-blue-50 hover:bg-blue-800 
+						px-6 py-2 rounded-xl envy-blue-bg text-blue-50
 						font-semibold"
               //our function
               onClick={handleSubmit}

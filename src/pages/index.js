@@ -12,7 +12,7 @@ export default function Home() {
           <div className="flex justify-center items-center mt-12">
             {' '}
             <Link href="/login">
-              <a className="focus:outline-none focus:ring focus:border-blue-800 px-6 py-2 rounded-xl bg-blue-500 text-blue-50 hover:bg-blue-800 font-semibold">Go to Login</a>
+              <a className="focus:outline-none focus:ring focus:border-blue-800 px-6 py-2 rounded-xl envy-blue-bg text-blue-50 hover:bg-blue-800 font-semibold">Go to Login</a>
             </Link>
           </div>
         </p>
