@@ -14,8 +14,6 @@ export default async function handler(req, res) {
           .create({
             _type: 'todo',
             text: newTodo.text,
-            isCompleted: false,
-            createdAt: new Date().toISOString(),
             linkUrl: newTodo.linkUrl,
             userEmail: newTodo.user
           })
