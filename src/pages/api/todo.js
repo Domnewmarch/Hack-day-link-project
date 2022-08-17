@@ -18,9 +18,9 @@ export default async function handler(req, res) {
             userEmail: newTodo.user
           })
           .then(res => {
-            console.log(`Todo was created, document ID is ${res._id}`)
+            console.log(`Link was created, document ID is ${res._id}`)
           })
-        res.status(200).json({ msg: `Todo was created, document ID is ${res._id}` })
+        res.status(200).json({ msg: `Link was created, document ID is ${res._id}` })
       } catch (err) {
         console.error(err)
         res.status(500).json({ msg: 'Error, check console' })
