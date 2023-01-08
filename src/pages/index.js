@@ -11,7 +11,7 @@ export default function Home() {
       </svg>
 
       <h1 className="text-2xl tracking-tight mt-8 mb-2 text-white">Welcome to HIIT IT</h1>
-      <h1 className="text-body tracking-tight mb-8 text-gray-400">The number 1 workout tracking app</h1>
+      <h2 className="text-body tracking-tight mb-8 text-gray-400">The number 1 workout tracking app</h2>
 
       <div className="absolute bottom-10 bg-purple-600 p-3 w-3/4 md:w-96 text-center text-white rounded-lg">
         <Link href="/login">
