@@ -145,7 +145,7 @@ export default function Todos() {
               className="text-xl font-bold tracking-tight 
 					my-8"
             >
-              <a href="https://hack-day-link-project.vercel.app/links">View Your Links Here!</a>
+              <a href="/links">View Your Links Here!</a>
             </h1>
             {loading ? 'loading...' : <TodoList user={user} todoList={todoList} />}
           </div>

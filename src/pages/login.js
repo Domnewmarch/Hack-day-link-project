@@ -29,7 +29,8 @@ export default function Login() {
 
   return (
     <main className="flex flex-col justify-center items-center">
-      <h1 className=" text-4xl envy-blue font-bold tracking-tight mt-8">Welcome to Parallax Links</h1>
+      <h1 className=" text-4xl envy-blue font-bold tracking-tight mt-8">Welcome to HIIT IT</h1>
+      <h1 className=" text-4xl envy-blue font-bold tracking-tight mt-8">Enter your email below to sign in or sign up!</h1>
       <form className="mt-12 max-w-2xl mx-auto" onSubmit={handleSubmit}>
         <label className="block mb-2 uppercase text-gray-700 font-semibold" htmlFor="email">
           Email
