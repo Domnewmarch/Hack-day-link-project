@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-col justify-center items-center mx-auto max-w-2xl md:max-w-full relative min-h-screen bg-gradient-to-b from-purple-300 to-black">
+      <div className="flex flex-col justify-center items-center mx-auto max-w-2xl md:max-w-full relative min-h-screen bg-gradient-to-b from-purple-400 to-black">
         <svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M36.7162 75.3139C26.377 75.1226 18.1483 66.5837 18.3396 56.2445L18.9048 25.6961C29.2441 25.8874 37.4727 34.4263 37.2814 44.7656L36.7162 75.3139Z" fill="white" />
           <path d="M42.3374 26.127L41.7722 56.6754C41.5809 67.0146 49.8096 75.5536 60.1488 75.7449L60.714 45.1965C60.9054 34.8535 52.6767 26.3183 42.3374 26.127Z" fill="white" />
@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="text-2xl tracking-tight mt-8 mb-2 text-white">Welcome to HIIT IT</h1>
         <h2 className="text-body tracking-tight mb-8 text-gray-400">The number 1 workout tracking app</h2>
 
-        <div className="absolute bottom-10 bg-purple-600 p-3 w-3/4 md:w-96 text-center text-white rounded-lg">
+        <div className="absolute bottom-20 bg-purple-600 p-3 w-3/4 md:w-96 text-center text-white rounded-lg">
           <Link href="/login">
             <a className="">Continue with email</a>
           </Link>
