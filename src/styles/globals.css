@@ -9,6 +9,18 @@ body {
   background-color: #8b5cdd;
 }
 
+.dark-bg{
+  background-color: #252525;
+}
+
+.lightgrey-bg{
+  background-color: #333333;
+}
+
+.text-newgray{
+  color: #787878;
+}
+
 .button-icons {
   margin-right: -4px;
   flex-shrink: 0;
@@ -28,6 +40,12 @@ body {
   background-color: red;
   width: 20px;
   hegith: 20px;
+}
+
+.login-input::before{
+  width: 30px;
+  height: 30px;
+  background-color: red
 }
 
 @tailwind base;
